@@ -28,6 +28,54 @@
   color: #61dafb;
 }
 
+
+input[type=text], input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+form {
+  text-align: left;
+}
+
+.doneButton {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: #dbe1ee;
+  padding: 0.56rem;
+  color: black;
+  border-radius: 0.5rem;
+  border: black 2px solid;
+}
+
+.deleteButton {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
