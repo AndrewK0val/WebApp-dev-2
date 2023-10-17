@@ -23,11 +23,11 @@ export default function App() {
 
   const [ taskState, setTaskState ] = useState({
     tasks: [
-      { title:"Dishes", description: "Empty dishwasher", deadline: "Today", done: false },
-      { title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false },
-      { title: "Tidy up", deadline: "Today", description: "Tidy up the living room", done: false },
-      { title: "Mop floors", deadline: "Next week", description: "All floors in the house", done: false},
-      { title: "Clean windows", deadline: "Tomorrow", description: "Clean all windows in the house", done: false }
+      { title:"Dishes", description: "Empty dishwasher", deadline: "Today", done: false, priority: "High" },
+      { title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow", done: false, priority: "Medium" },
+      { title: "Tidy up", deadline: "Today", description: "Tidy up the living room", done: false, priority: "Low" },
+      { title: "Mop floors", deadline: "Next week", description: "All floors in the house", done: false, priority: "High"},
+      { title: "Clean windows", deadline: "Tomorrow", description: "Clean all windows in the house", done: false, priority: "Medium" }
     ]
   });
 
@@ -70,6 +70,9 @@ const formChangeHandler = (event) => {
         break
     case "deadline":
       form.deadline = event.target.value
+      break
+    case "priority":
+      form.priority = event.target.value
       break
     default:
       form = formState
@@ -121,6 +124,7 @@ const formSubmitHandler = (event) => {
                 deadline={task.deadline}
                 done={task.done}
                 key={task.id}
+                priority={task.priority}
                 markDone = {() => doneHandler(index)}
                 deleteTask = {() => deleteHandler(index)}
               />

@@ -10,6 +10,25 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 
+function priorityColor(priority) {
+    let color = ''
+    switch (priority) {
+        case 'High':
+            color = 'red'
+            break;
+        case 'Medium':
+            color = 'orange'
+            break;
+        case 'Low':
+            color = 'yellow'
+            break;
+        default:
+            color = 'white'
+            break;
+    }
+    return color
+}
+
 const Task = (props) => {
     
     return (
@@ -54,6 +73,17 @@ const Task = (props) => {
                 >
                     {props.description}
                 </Typography>
+                <Typography
+                    component="p"
+                    variant="subtitle1"
+                    align="center"
+                    // color="white"
+                    backgroundColor={priorityColor(props.priority)}
+                    sx={{ fontStyle: 'bold'}}
+                >
+                   priority: {props.priority}
+                </Typography>
+
             </CardContent>
             <CardActions sx={{justifyContent: 'space-between', padding: '20px'}}>
                 <Button variant="contained" size="small" color="success" onClick={props.markDone}>
